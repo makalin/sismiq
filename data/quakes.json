@@ -1,0 +1,26 @@
+[
+    {
+        "time": "2024-03-20T10:30:00Z",
+        "magnitude": 4.2,
+        "location": "Izmir, Turkey",
+        "lat": 38.4237,
+        "lng": 27.1428,
+        "depth": 10.5
+    },
+    {
+        "time": "2024-03-20T09:15:00Z",
+        "magnitude": 3.8,
+        "location": "Antalya, Turkey",
+        "lat": 36.8841,
+        "lng": 30.7056,
+        "depth": 8.2
+    },
+    {
+        "time": "2024-03-20T08:45:00Z",
+        "magnitude": 5.1,
+        "location": "Istanbul, Turkey",
+        "lat": 41.0082,
+        "lng": 28.9784,
+        "depth": 15.3
+    }
+] 

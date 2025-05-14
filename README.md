@@ -4,7 +4,7 @@
 A real-time earthquake monitoring web app powered by live data.  
 Tracks and visualizes seismic activity across Türkiye (TR) and nearby regions with user-defined zones.
 
-![SISMIQ Logo](assets/sismiq_logo.png)
+![SISMIQ Logo](assets/sismiq.svg)
 
 ---
 
@@ -29,7 +29,7 @@ Tracks and visualizes seismic activity across Türkiye (TR) and nearby regions w
 |--------------|--------------------|
 | Frontend     | HTML, CSS, Vanilla JS |
 | Mapping      | Leaflet.js + OpenStreetMap |
-| Earthquake Feed | Scraped + parsed live KOERI feed |
+| Earthquake Feed | PHP proxy + KOERI feed |
 | Hosting      | GitHub Pages       |
 | Privacy      | Local encrypted JSON for marked locations (not in repo) |
 
@@ -38,20 +38,19 @@ Tracks and visualizes seismic activity across Türkiye (TR) and nearby regions w
 ## 📁 Project Structure
 
 ```
-
 sismiq/
-├── index.html
-├── style.css
-├── app.js
+├── index.html          # Main application entry point
+├── style.css          # Application styles
+├── app.js             # Core application logic
+├── proxy.php          # PHP proxy for KOERI data fetching
 ├── assets/
-│   └── sismiq\_banner\_dark.png
+│   └── sismiq_banner_dark.png
 ├── data/
-│   └── quakes.json (auto-refreshed)
+│   └── quakes.json    # Auto-refreshed earthquake data
 ├── config/
 │   └── myzones.enc.json (ignored)
 ├── README.md
 └── .gitignore
-
 ```
 
 ---

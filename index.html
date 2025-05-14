@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISMIQ - Real-time Earthquake Monitoring</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-controls">
+        <button class="theme-toggle" title="Toggle Dark/Light Mode">🌓</button>
+        <button class="refresh-button" title="Refresh Data">🔄</button>
+        <select class="map-style-selector" title="Change Map Style">
+            <option value="default">Default Map</option>
+            <option value="dark">Dark Map</option>
+            <option value="satellite">Satellite</option>
+            <option value="terrain">Terrain</option>
+        </select>
+    </div>
+
+    <header>
+        <h1>SISMIQ 🌍</h1>
+        <p>Feel the Earth Before It Hits</p>
+    </header>
+
+    <main>
+        <div id="map"></div>
+        
+        <div class="controls-wrapper">
+            <div class="controls">
+                <button id="locateMe">📍 Locate Me</button>
+                <button id="addZone">➕ Add Zone</button>
+                <button id="reportQuake">⚠️ Report Felt Quake</button>
+            </div>
+        </div>
+
+        <div id="quakeList">
+            <h2>Recent Earthquakes</h2>
+            <div class="quake-filters">
+                <label>
+                    <input type="checkbox" id="showDistances" checked>
+                    Show Distances
+                </label>
+                <label>
+                    <input type="number" id="minMagnitude" placeholder="Min Magnitude" min="0" max="10" step="0.1">
+                </label>
+            </div>
+            <div id="quakeContainer"></div>
+        </div>
+    </main>
+
+    <div id="zoneModal" class="modal">
+        <div class="modal-content">
+            <h2>Add Zone</h2>
+            <form id="zoneForm">
+                <input type="text" id="zoneName" placeholder="Zone Name" required>
+                <input type="number" id="zoneRadius" placeholder="Radius (km)" required>
+                <button type="submit">Save Zone</button>
+                <button type="button" class="cancel">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <h2>Report Felt Quake</h2>
+            <form id="reportForm">
+                <input type="number" id="magnitude" placeholder="Magnitude" step="0.1" required>
+                <textarea id="description" placeholder="Description (optional)"></textarea>
+                <button type="submit">Submit Report</button>
+                <button type="button" class="cancel">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
